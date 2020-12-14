@@ -25,6 +25,10 @@ using namespace std;
 
 int main() {
     ifstream ifs("data.txt");
-    int n(0);
+    int n(0), tmp(0), final_sum(0);
     ifs >> n;
+    int greatest_min_even(1001),
+            mid_min_odd(1001), mid_min_even(1001),
+            least_min_odd(1001), least_min_even(1001);
+
 }

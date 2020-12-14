@@ -24,6 +24,7 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
-    return 0;
+    ifstream ifs("data.txt");
+    int n(0);
+    ifs >> n;
 }

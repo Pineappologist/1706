@@ -24,11 +24,35 @@
 using namespace std;
 
 int main() {
+
     ifstream ifs("data.txt");
     int n(0), tmp(0), final_sum(0);
     ifs >> n;
+
     int greatest_min_even(1001),
             mid_min_odd(1001), mid_min_even(1001),
             least_min_odd(1001), least_min_even(1001);
+
+    for (int i = 0; i < n; ++i) {
+        ifs >> tmp;
+        if (tmp % 2 == 0) {
+            if (tmp < least_min_even and tmp < mid_min_even) {
+                mid_min_even = least_min_even;
+                least_min_even = tmp;
+            } else if (tmp > least_min_even and tmp < mid_min_even) {
+                greatest_min_even = mid_min_even;
+                mid_min_even = tmp;
+            } else if (tmp > mid_min_even and tmp < greatest_min_even) {
+                greatest_min_even = tmp;
+            }
+        } else {
+            if (tmp < least_min_odd and tmp < mid_min_odd) {
+                mid_min_odd = least_min_odd;
+                least_min_odd = tmp;
+            } else if (tmp > least_min_odd and tmp < mid_min_odd) {
+                mid_min_odd = tmp;
+            }
+        }
+    }
 
 }

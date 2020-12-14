@@ -55,4 +55,12 @@ int main() {
         }
     }
 
+    if ((least_min_even == 1001 or greatest_min_even == 1001 or mid_min_even == 1001) and
+        (least_min_odd == 1001 or mid_min_odd == 1001 or least_min_even == 1001)) {
+        cout << -1;
+    } else {
+        final_sum = min(least_min_even + greatest_min_even + mid_min_even,
+                        least_min_odd + mid_min_odd + least_min_even);
+        cout << final_sum;
+    }
 }

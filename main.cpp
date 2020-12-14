@@ -24,12 +24,12 @@
 using namespace std;
 
 int main() {
-//    ofstream fs("data.txt");
+    ofstream fs("data.txt");
     mt19937 mt(time(0));
     uniform_int_distribution<> dqtty(1, 40000);
     uniform_int_distribution<> dnumber(1, 1000);
     int n = dqtty(mt);
-    cout << n << endl;
+    fs << n << endl;
     for (int i = 0; i < n; i++)
-        cout << dnumber(mt) << endl;
+        fs << dnumber(mt) << endl;
 }
